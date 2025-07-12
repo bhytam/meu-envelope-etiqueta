@@ -96,6 +96,10 @@
         document.getElementById('localizador').textContent = getQueryParam('localizador');
         document.getElementById('remetente').textContent = getQueryParam('remetente');
         document.getElementById('destinatario').textContent = getQueryParam('destinatario');
+
+        window.onload = function() {
+            window.print();
+        }
     </script>
 </body>
 </html>
