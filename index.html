@@ -4,17 +4,26 @@
     <meta charset="UTF-8">
     <title>Meu Envelope - Etiqueta 58x25mm</title>
     <style>
+        @page {
+            size: 58mm 25mm;
+            margin: 0;
+        }
+        html, body {
+            width: 58mm;
+            height: 25mm;
+        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, sans-serif;
+            color: black;
+            -webkit-font-smoothing: none;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: geometricPrecision;
         }
         body {
-            width: 58mm;
-            height: 25mm;
             background: white;
-            color: black;
             display: flex;
             flex-direction: column;
             padding: 2mm;
@@ -27,14 +36,13 @@
             min-height: 4mm;
         }
         .header .app-name {
-            font-size: 10pt; /* AUMENTADO */
+            font-size: 12pt; /* AUMENTADO */
             font-weight: bold;
-            color: #333; /* mais escuro para imprimir */
         }
         .localizador {
             text-align: center;
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
             padding: 1.5mm 0;
             flex-grow: 1;
             display: flex;
@@ -42,7 +50,7 @@
             justify-content: center;
         }
         .localizador h1 {
-            font-size: 18pt;
+            font-size: 20pt; /* um pouco maior */
             font-weight: bold;
             letter-spacing: 1px;
         }
@@ -51,18 +59,13 @@
             justify-content: space-between;
             align-items: center;
             padding-top: 1mm;
-            font-size: 9pt; /* AUMENTADO */
+            font-size: 10pt; /* AUMENTADO */
         }
         .pessoas .label {
-            font-size: 8pt; /* AUMENTADO */
-            color: #333;
-        }
-        .pessoas .nome {
-            font-weight: bold;
+            font-size: 9pt; /* AUMENTADO */
         }
         .pessoas .seta {
             font-size: 14pt;
-            color: #333;
         }
         .destinatario {
             text-align: right;
