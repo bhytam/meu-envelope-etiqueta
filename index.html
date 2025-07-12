@@ -2,55 +2,47 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Meu Envelope - Etiqueta 58x25mm</title>
+    <title>Meu Envelope - Etiqueta 56x30mm</title>
     <style>
-        @page {
-            size: 58mm 25mm;
-            margin: 0;
-        }
-        html, body {
-            width: 58mm;
-            height: 25mm;
-        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: Arial, sans-serif;
-            color: black;
-            -webkit-font-smoothing: none;
-            -moz-osx-font-smoothing: grayscale;
-            text-rendering: geometricPrecision;
         }
         body {
+            width: 56mm;
+            height: 30mm;
             background: white;
+            color: black;
             display: flex;
             flex-direction: column;
-            padding: 2mm;
+            padding: 2.5mm;
         }
         .header {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1mm;
-            min-height: 4mm;
+            margin-bottom: 2mm;
+            min-height: 5mm;
         }
         .header .app-name {
-            font-size: 12pt; /* AUMENTADO */
+            font-size: 8pt;
             font-weight: bold;
+            color: #555;
         }
         .localizador {
             text-align: center;
-            border-top: 1px solid black;
-            border-bottom: 1px solid black;
-            padding: 1.5mm 0;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            padding: 2mm 0;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
         .localizador h1 {
-            font-size: 20pt; /* um pouco maior */
+            font-size: 18pt;
             font-weight: bold;
             letter-spacing: 1px;
         }
@@ -58,14 +50,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-top: 1mm;
-            font-size: 10pt; /* AUMENTADO */
+            padding-top: 2mm;
+            font-size: 8pt;
         }
         .pessoas .label {
-            font-size: 9pt; /* AUMENTADO */
+            font-size: 7pt;
+            color: #888;
+        }
+        .pessoas .nome {
+            font-weight: bold;
         }
         .pessoas .seta {
             font-size: 14pt;
+            color: #aaa;
         }
         .destinatario {
             text-align: right;
@@ -100,10 +97,11 @@
         document.getElementById('remetente').textContent = getQueryParam('remetente');
         document.getElementById('destinatario').textContent = getQueryParam('destinatario');
 
+        // chama a janela de impressão logo após renderizar
         window.onload = function() {
             setTimeout(function() {
                 window.print();
-            }, 300);
+            }, 300); // pequeno delay para garantir que o DOM carregou
         }
     </script>
 </body>
