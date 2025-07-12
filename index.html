@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Envelope - Etiqueta 56x30mm</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            width: 56mm;
+            height: 30mm;
+            background: white;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            padding: 2.5mm;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2mm;
+            min-height: 5mm;
+        }
+        .header .app-name {
+            font-size: 8pt;
+            font-weight: bold;
+            color: #555;
+        }
+        .localizador {
+            text-align: center;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            padding: 2mm 0;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .localizador h1 {
+            font-size: 18pt;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .pessoas {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2mm;
+            font-size: 8pt;
+        }
+        .pessoas .label {
+            font-size: 7pt;
+            color: #888;
+        }
+        .pessoas .nome {
+            font-weight: bold;
+        }
+        .pessoas .seta {
+            font-size: 14pt;
+            color: #aaa;
+        }
+        .destinatario {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="app-name">Meu Envelope</div>
+    </div>
+    <div class="localizador">
+        <h1 id="localizador">----</h1>
+    </div>
+    <div class="pessoas">
+        <div class="remetente">
+            <div class="label">Remetente</div>
+            <div class="nome" id="remetente">----</div>
+        </div>
+        <div class="seta">»</div>
+        <div class="destinatario">
+            <div class="label">Destinatário</div>
+            <div class="nome" id="destinatario">----</div>
+        </div>
+    </div>
+
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param) || '----';
+        }
+        document.getElementById('localizador').textContent = getQueryParam('localizador');
+        document.getElementById('remetente').textContent = getQueryParam('remetente');
+        document.getElementById('destinatario').textContent = getQueryParam('destinatario');
+    </script>
+</body>
+</html>
