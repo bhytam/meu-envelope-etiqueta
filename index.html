@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Meu Envelope - Etiqueta 56x30mm</title>
+    <title>Meu Envelope - Etiqueta 58x25mm</title>
     <style>
         * {
             margin: 0;
@@ -11,31 +11,31 @@
             font-family: Arial, sans-serif;
         }
         body {
-            width: 56mm;
-            height: 30mm;
+            width: 58mm;
+            height: 25mm;
             background: white;
             color: black;
             display: flex;
             flex-direction: column;
-            padding: 2.5mm;
+            padding: 2mm;
         }
         .header {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 2mm;
-            min-height: 5mm;
+            margin-bottom: 1mm;
+            min-height: 4mm;
         }
         .header .app-name {
-            font-size: 8pt;
+            font-size: 10pt; /* AUMENTADO */
             font-weight: bold;
-            color: #555;
+            color: #333; /* mais escuro para imprimir */
         }
         .localizador {
             text-align: center;
-            border-top: 1px solid #ccc;
-            border-bottom: 1px solid #ccc;
-            padding: 2mm 0;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+            padding: 1.5mm 0;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -50,19 +50,19 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-top: 2mm;
-            font-size: 8pt;
+            padding-top: 1mm;
+            font-size: 9pt; /* AUMENTADO */
         }
         .pessoas .label {
-            font-size: 7pt;
-            color: #888;
+            font-size: 8pt; /* AUMENTADO */
+            color: #333;
         }
         .pessoas .nome {
             font-weight: bold;
         }
         .pessoas .seta {
             font-size: 14pt;
-            color: #aaa;
+            color: #333;
         }
         .destinatario {
             text-align: right;
@@ -96,10 +96,11 @@
         document.getElementById('localizador').textContent = getQueryParam('localizador');
         document.getElementById('remetente').textContent = getQueryParam('remetente');
         document.getElementById('destinatario').textContent = getQueryParam('destinatario');
+
         window.onload = function() {
             setTimeout(function() {
                 window.print();
-            }, 300); // pequeno delay para garantir que o DOM carregou
+            }, 300);
         }
     </script>
 </body>
